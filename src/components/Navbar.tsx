@@ -1,7 +1,9 @@
 const Navbar = () => {
   return (
-    <div className="h-16 bg-blue-500 w-full flex justify-center items-center text-white text-2xl">
-      Hello
+    <div className="w-[1620px] h-[113px] left-[108px] px-10 py-6">
+      <div className="h-10 w-[470px]">
+        <h1>John Smith Profile</h1>
+      </div>
     </div>
   );
 };
