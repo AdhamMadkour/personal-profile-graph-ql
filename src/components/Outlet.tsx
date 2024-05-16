@@ -1,7 +1,13 @@
-import React from "react";
+import ProfileCard from "./ProfileCard";
+import DataCardRail from "./DataCardRail";
 
 const Outlet = () => {
-  return <div className="h-screen bg-red-500">outlet</div>;
+  return (
+    <div className="flex flex-row h-screen bg-[#FAFAFA] space-x-6">
+      <ProfileCard></ProfileCard>
+      <DataCardRail></DataCardRail>
+    </div>
+  );
 };
 
 export default Outlet;

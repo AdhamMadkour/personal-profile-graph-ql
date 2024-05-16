@@ -7,14 +7,13 @@ import { FiPieChart } from "react-icons/fi";
 
 function SideBar() {
   return (
-    <div className=" flex flex-col w-[108px] h-[1273px] bg-[#FFFFFF] items-center gap-10 p-[30px]">
-      <div className="h-[45px] flex justify-center items-center text-white text-2xl pt-[40px]">
+    <div className=" flex flex-col w-[108px] h-[1273px] bg-[#FFFFFF] items-center gap-10 p-[30px] pt-[40px] border-r-[#E7EAEE] border-r-[1px]">
+      <div className="h-[45px] flex justify-center items-center text-white text-2xl pt-0">
         <img src={firm_logo} alt="logo" className="size-11" />
       </div>
 
       <div className="flex flex-col items-center pt-5 gap-6 h-80 w-12">
         <div>
-          {/* inner radius */}
           <GridViewIcon
             sx={{
               backgroundColor: "#003fad",
