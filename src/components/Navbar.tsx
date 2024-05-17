@@ -42,11 +42,17 @@ const Navbar = () => (
           aria-label="breadcrumb"
           sx={{ color: "#459AFF" }}
         >
-          {journey.map((item) => (
-            <p key={item} className="text-[#737791] text-xs">
-              {item}
-            </p>
-          ))}
+          {journey.map((item) =>
+            journey.indexOf(item) === journey.length - 1 ? (
+              <p key={item} className="text-[#459AFF] text-xs">
+                {item}
+              </p>
+            ) : (
+              <p key={item} className="text-[#737791] text-xs">
+                {item}
+              </p>
+            )
+          )}
         </Breadcrumbs>
       </div>
     </div>
