@@ -1,6 +1,10 @@
 import DataCardFormItem from "./DataCardFormItem";
+import DataCardFormItemEditable from "./DataCardFormItemEditable";
+interface Props {
+  edit: boolean;
+}
 
-const DataCardForm = () => {
+const DataCardForm = (props: Props) => {
   const layout = [3, 3, 4, 2];
   // Sample data to populate the grid items
   const items = Array.from({ length: 12 }, (_, index) => `Item ${index + 1}`);
@@ -12,7 +16,19 @@ const DataCardForm = () => {
       for (let i = 0; i < columns; i++) {
         if (itemIndex < items.length) {
           rowItems.push(
-            <DataCardFormItem title={"title"} content={"description"} />
+            props.edit ? (
+              <DataCardFormItemEditable
+                title={`Item ${itemIndex + 1}`}
+                content={`Item ${itemIndex + 1} description`}
+                key={`item-${rowIndex}-${i}`}
+              />
+            ) : (
+              <DataCardFormItem
+                title={`Item ${itemIndex + 1}`}
+                content={`Item ${itemIndex + 1} description`}
+                key={`item-${rowIndex}-${i}`}
+              />
+            )
           );
           itemIndex++;
         }
