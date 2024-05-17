@@ -44,7 +44,7 @@ const Navbar = () => (
         >
           {journey.map((item) =>
             journey.indexOf(item) === journey.length - 1 ? (
-              <p key={item} className="text-[#459AFF] text-xs">
+              <p key={item} className="text-[#003FAD] text-xs">
                 {item}
               </p>
             ) : (
