@@ -3,8 +3,6 @@ import DataCardFormItem from "./DataCardFormItem";
 import DataCardFormItemEditable from "./DataCardFormItemEditable";
 interface Props {
   edit: boolean;
-  itemIndex: number;
-  setItemIndex: (index: number, val: string) => void;
 }
 
 const DataCardForm = (props: Props) => {
@@ -32,7 +30,6 @@ const DataCardForm = (props: Props) => {
                   const newItems = [...items];
                   newItems[index] = val;
                   setItems(newItems);
-                  props.setItemIndex(index, val);
                 }}
               />
             ) : (
