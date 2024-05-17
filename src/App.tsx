@@ -1,29 +1,7 @@
 import BodyContainer from "./components/BodyContainer";
 import SideBar from "./components/SideBar";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  from,
-  HttpLink,
-} from "@apollo/client";
-
-import { onError } from "@apollo/client/link/error";
-const errorLink = onError(({ graphQLErrors, networkError }) => {
-  if (graphQLErrors) {
-    graphQLErrors.map(({ message, locations, path }) =>
-      console.log(
-        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
-      )
-    );
-  }
-  if (networkError) console.log(`[Network error]: ${networkError}`);
-});
-const link = from([errorLink, new HttpLink({ uri: "../public/User.json" })]);
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  link: link,
-});
+import { ApolloProvider } from "@apollo/client";
+import { client } from "./services/api-clients";
 
 function App() {
   return (
