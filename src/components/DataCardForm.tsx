@@ -1,13 +1,19 @@
+import { useState } from "react";
 import DataCardFormItem from "./DataCardFormItem";
 import DataCardFormItemEditable from "./DataCardFormItemEditable";
 interface Props {
   edit: boolean;
+  itemIndex: number;
+  setItemIndex: (index: number, val: string) => void;
 }
 
 const DataCardForm = (props: Props) => {
+  // comment for Eng. Mustafa this line is to change the number of columns in each row
   const layout = [3, 3, 4, 2];
-  // Sample data to populate the grid items
-  const items = Array.from({ length: 12 }, (_, index) => `Item ${index + 1}`);
+  const [items, setItems] = useState<string[]>([]);
+  useState(() => {
+    setItems(Array.from({ length: 12 }, (_, index) => `Item ${index + 1}`));
+  });
 
   const renderGridItems = () => {
     let itemIndex = 0;
@@ -19,13 +25,20 @@ const DataCardForm = (props: Props) => {
             props.edit ? (
               <DataCardFormItemEditable
                 title={`Item ${itemIndex + 1}`}
-                content={`Item ${itemIndex + 1} description`}
+                content={items[itemIndex]}
                 key={`item-${rowIndex}-${i}`}
+                index={itemIndex}
+                setIndex={(index, val) => {
+                  const newItems = [...items];
+                  newItems[index] = val;
+                  setItems(newItems);
+                  props.setItemIndex(index, val);
+                }}
               />
             ) : (
               <DataCardFormItem
                 title={`Item ${itemIndex + 1}`}
-                content={`Item ${itemIndex + 1} description`}
+                content={items[itemIndex]}
                 key={`item-${rowIndex}-${i}`}
               />
             )
