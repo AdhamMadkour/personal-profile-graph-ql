@@ -1,12 +1,21 @@
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import AvatarPicture from "../assets/avatar.png";
 import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import Badge from "@mui/material/Badge";
 
 const journey = ["Dashboard", "HR manage", "Employees", "John Smith Profile"];
-
+const iconDesign = {
+  color: "#004A3F",
+  width: "24px",
+  height: "24px",
+  cursor: "pointer",
+};
 const Navbar = () => {
   return (
-    <div className="flex w-[1620px] h-[113px] left-[108px] px-10 py-6 justify-between bg-[#FAFAFA]">
+    <div className="flex w-[1620px] h-[113px] left-[108px] px-10 py-6 pr-10 justify-between bg-[#FAFAFA]">
       <div className="h-10 w-[470px]">
         <h1 className="flex flex-col text-[26px] font-bold">
           John Smith Profile
@@ -27,85 +36,29 @@ const Navbar = () => {
           </span>
         </div>
       </div>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between w-[249px] h-10">
         <div>
-          <svg
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <Badge
+            badgeContent=" "
+            color="error"
+            variant="dot"
+            overlap="circular"
           >
-            <path
-              d="M18 8.5C18 6.9087 17.3679 5.38258 16.2426 4.25736C15.1174 3.13214 13.5913 2.5 12 2.5C10.4087 2.5 8.88258 3.13214 7.75736 4.25736C6.63214 5.38258 6 6.9087 6 8.5C6 15.5 3 17.5 3 17.5H21C21 17.5 18 15.5 18 8.5Z"
-              stroke="#004A3F"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M13.73 21.5C13.5542 21.8031 13.3019 22.0547 12.9982 22.2295C12.6946 22.4044 12.3504 22.4965 12 22.4965C11.6496 22.4965 11.3054 22.4044 11.0018 22.2295C10.6982 22.0547 10.4458 21.8031 10.27 21.5"
-              stroke="#004A3F"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+            <NotificationsNoneIcon sx={iconDesign} />
+          </Badge>
         </div>
         <div>
-          <svg
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18 8.5C18 6.9087 17.3679 5.38258 16.2426 4.25736C15.1174 3.13214 13.5913 2.5 12 2.5C10.4087 2.5 8.88258 3.13214 7.75736 4.25736C6.63214 5.38258 6 6.9087 6 8.5C6 15.5 3 17.5 3 17.5H21C21 17.5 18 15.5 18 8.5Z"
-              stroke="#004A3F"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M13.73 21.5C13.5542 21.8031 13.3019 22.0547 12.9982 22.2295C12.6946 22.4044 12.3504 22.4965 12 22.4965C11.6496 22.4965 11.3054 22.4044 11.0018 22.2295C10.6982 22.0547 10.4458 21.8031 10.27 21.5"
-              stroke="#004A3F"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <EmailOutlinedIcon sx={iconDesign} />
         </div>
         <div>
-          <svg
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18 8.5C18 6.9087 17.3679 5.38258 16.2426 4.25736C15.1174 3.13214 13.5913 2.5 12 2.5C10.4087 2.5 8.88258 3.13214 7.75736 4.25736C6.63214 5.38258 6 6.9087 6 8.5C6 15.5 3 17.5 3 17.5H21C21 17.5 18 15.5 18 8.5Z"
-              stroke="#004A3F"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M13.73 21.5C13.5542 21.8031 13.3019 22.0547 12.9982 22.2295C12.6946 22.4044 12.3504 22.4965 12 22.4965C11.6496 22.4965 11.3054 22.4044 11.0018 22.2295C10.6982 22.0547 10.4458 21.8031 10.27 21.5"
-              stroke="#004A3F"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <SettingsOutlinedIcon sx={iconDesign} />
         </div>
         <div>
           <div>
             <img
               src={AvatarPicture}
               alt="profile"
-              className="h-8 w-8 rounded-full"
+              className="rounded-full size-10"
             />
           </div>
         </div>
