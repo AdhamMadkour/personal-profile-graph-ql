@@ -2,7 +2,6 @@ import { useState } from "react";
 import DataCardForm from "./DataCardForm";
 import DataCardHeader from "./DataCardHeader";
 
-
 const DataCard = () => {
   const [editable, setEditable] = useState(false);
   return (
